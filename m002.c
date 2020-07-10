@@ -26,7 +26,28 @@
 /* Sort three integers x, y, z in ascending order.*/
 
 void sort (int *a, int *b, int *c)
-{
+{int k;        
+    
+    if (*a>*c)    
+    {
+         k = *c;
+        *a = k;
+        *c = *a;
+        
+    }
+    
+    if (*b>*c)   
+    {
+        k = *c;
+        *c = *b;
+        *b = k;
+    }
+    if (*a>*b)   
+    {
+        k = *b;
+        *b = *a;
+        *a = k;
+    }
 }
 
 /* Do not edit this function. */
