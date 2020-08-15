@@ -18,17 +18,24 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#define USAGE "m009 <num1> <nun2> ... \n"
 #define MAX 100
 
 /* Sort the first 'n' integers values in 'vector'. */
 
-void sort (int* vector, int n)
-{
+void sort (int *a, int n)
+{  int b,c,i;
+    for (i=1;i<n;i=i+1)
+    {  b=a[i];
+      c=i-1;
+      while(b<a[c]&&(c>=0))
+      {
+        a[c+1]=a[c];
+        c=c-1;
+      }
+      a[c+1]=b;
+    }
 }
-
-#define USAGE "m009 <num1> <nun2> ... \n"
-
 /* Do not edit this function. */
 
 int main (int argc, char **argv)
