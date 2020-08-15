@@ -22,17 +22,54 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
 #define MAX 256
 
 /* Converts the string 's' from first-middle-last name 
    form into LAST-first-middle form. */
 
 void lastname (char *s)
-{
-}
+{int a,b,c,i;
+    char d[50],e[50],f[50],g[50],h;
+    b=0;
+    a=strlen(s);
+    strncpy(d,s,a);
+    d[a+1]= '\0';
+
+      for (i=0;i<=(a-1);i=i+1)
+      {
+        h=d[i];
 
 
+        if (h== ' ')
+        {   c=i;}
+      } 
+  strncpy(e,d,(c));
+    e[c]='\0';
+
+    strncpy(f,d+c+1,a-c);
+    f[a-c-2]='\0';
+
+    a=strnlen(f);
+    strncpy(g,f,a);
+    g[a]=    ',';
+    g[a+1]=  ' ';
+    g[a+2]= '\0';
+
+    for (i=0;i<=a;i=i+1)
+    {
+        h=g[i];
+
+        if (h>='a' && 122>='c')
+        {   g[i]=g[i]-32;
+            ;
+        }
+    }    
+    strncpy(g+a+2,e,c);
+     g[a+2+c]='\0';
+    a=strlen(g);
+    strncpy(s,g,a);
+    s[a]='\0';
+}     
 
 /* Do not edit this function. */
 
