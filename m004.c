@@ -30,7 +30,22 @@
 int decimal (char *b)
 {
   
-  return 0;
+  int k;
+  int c;
+  int contador = 0;
+  int inicio = 1;
+  c = strlen (b);
+  
+  for (k = c-1; k >= 0 ; k--)
+  {
+     if (b[k]=='1')
+     {
+        contador = contador + inicio;
+     }
+     
+     inicio = inicio * 2;
+  }
+  return contador;
 }
 
 #define USAGE "m004 <string>\n"
